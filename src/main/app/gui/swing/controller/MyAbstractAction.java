@@ -14,6 +14,7 @@ public abstract class MyAbstractAction extends AbstractAction {
             icon = new ImageIcon(imageURL);
         }else{
             System.err.println("Resource not found: " + fileName);
+
         }
         return icon;
     }

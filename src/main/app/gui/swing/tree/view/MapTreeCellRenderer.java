@@ -1,5 +1,11 @@
 package main.app.gui.swing.tree.view;
 
+import main.app.gui.swing.tree.model.MapTreeItem;
+import main.app.mapRepository.implementation.Element;
+import main.app.mapRepository.implementation.MindMap;
+import main.app.mapRepository.implementation.Project;
+import main.app.mapRepository.implementation.ProjectExplorer;
+
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import java.awt.*;
@@ -11,19 +17,19 @@ public class MapTreeCellRenderer extends DefaultTreeCellRenderer {
 
         super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
         URL imageURL = null;
-//
-//        if (((MapTreeItem)value).getMapNode() instanceof ProjectExplorer) {
-//            imageURL = getClass().getResource("/images/project-explorer.png");
-//        }
-//        else if (((MapTreeItem)value).getMapNode() instanceof Project) {
-//            imageURL = getClass().getResource("/images/folder.png");
-//        }
-//        else if(((MapTreeItem)value).getMapNode() instanceof MindMap){
-//            imageURL = getClass().getResource("/images/mindmap.png");
-//        }
-//        else if(((MapTreeItem)value).getMapNode() instanceof Element){
-//            imageURL = getClass().getResource("/images/element.png");
-//        }
+
+        if (((MapTreeItem)value).getMapNode() instanceof ProjectExplorer) {
+            imageURL = getClass().getResource("/images/project-explorer.png");
+        }
+        else if (((MapTreeItem)value).getMapNode() instanceof Project) {
+            imageURL = getClass().getResource("/images/folder.png");
+        }
+        else if(((MapTreeItem)value).getMapNode() instanceof MindMap){
+            imageURL = getClass().getResource("/images/mindmap.png");
+        }
+        else if(((MapTreeItem)value).getMapNode() instanceof Element){
+            imageURL = getClass().getResource("/images/element.png");
+        }
 
         Icon icon = null;
         if (imageURL != null)

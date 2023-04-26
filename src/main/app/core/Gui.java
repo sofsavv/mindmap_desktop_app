@@ -1,6 +1,8 @@
 package main.app.core;
 
-public interface Gui {
+import main.app.gui.swing.observer.Subscriber;
+
+public interface Gui extends Subscriber {
 
     void start();
 }
