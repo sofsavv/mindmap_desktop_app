@@ -14,6 +14,8 @@ public class MainFrame extends JFrame {
 
     private void initGui(){
 
+
+
     }
 
     public static MainFrame getInstance(){
