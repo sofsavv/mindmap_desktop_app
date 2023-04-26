@@ -11,7 +11,7 @@ public abstract class NodeFactory {
         mapNode.setParent(parent);
 
         if(parent instanceof MapNodeComposite){
-            mapNode.setName(mapNode.getName() + ((MapNodeComposite)parent).getIndex());
+            mapNode.setName(mapNode.getName() + "_" +((MapNodeComposite)parent).getIndex());
             ((MapNodeComposite)parent).setIndex(((MapNodeComposite)parent).getIndex()+1);
         }
         return mapNode;

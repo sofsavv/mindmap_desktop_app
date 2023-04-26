@@ -1,7 +1,6 @@
 package main.app.gui.swing.view.dialog;
 
 import lombok.Getter;
-import main.app.core.ApplicationFramework;
 
 import javax.swing.*;
 import java.awt.*;

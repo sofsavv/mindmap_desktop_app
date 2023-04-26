@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 public class ColourAction extends MyAbstractAction {
 
     private Color color;
-
     public ColourAction(){
         putValue(NAME, "set colour");
         putValue(SMALL_ICON, loadIcon("/images/colours.png"));
