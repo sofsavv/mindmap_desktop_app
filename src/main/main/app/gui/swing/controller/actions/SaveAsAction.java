@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 
 public class SaveAsAction extends MyAbstractAction {
-    private final File directory = new File("src/main/resources/templates");
+    private final File directory = new File("src/resources/templates");
 
     public SaveAsAction(){
         putValue(NAME, "SaveAs");
@@ -29,7 +29,7 @@ public class SaveAsAction extends MyAbstractAction {
             if(MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode() instanceof Project) {
                 Project project = (Project) MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode();
                 File projectFile = null;
-                project.setFilePath("src/main/resources/templates");
+                project.setFilePath("src/resources/templates");
                 if (fileChooser.showSaveDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
                     projectFile = fileChooser.getSelectedFile();
                     project.setFilePath(projectFile.getPath());
@@ -39,7 +39,7 @@ public class SaveAsAction extends MyAbstractAction {
                 ApplicationFramework.getInstance().getMessageGenerator().generate(MyNotification.SAVED);
                 project.setChanged(false);
 
-            }else if(MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode() instanceof MindMap){ //cuvamo templejt
+            }else if(MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode() instanceof MindMap){
 
                 MindMap map = (MindMap) MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode();
                 directory.mkdir();

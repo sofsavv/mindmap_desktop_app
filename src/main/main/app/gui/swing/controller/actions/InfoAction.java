@@ -15,7 +15,7 @@ public class InfoAction extends MyAbstractAction {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        InfoDialog dialog = new InfoDialog(MainFrame.getInstance(), loadIcon("/images/sofijana1.png"));
+        InfoDialog dialog = new InfoDialog(MainFrame.getInstance());
         dialog.setVisible(true);
     }
 }

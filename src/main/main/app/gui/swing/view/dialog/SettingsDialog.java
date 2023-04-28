@@ -45,16 +45,15 @@ public class SettingsDialog extends JDialog {
         setSize(330,230);
         setResizable(false);
         setLocationRelativeTo(parent);
-        Dimension dimension = new Dimension(80, 25);
-        lblColour = new JLabel(" Choose different colour");
+        Dimension dimension = new Dimension(80, 30);
         lblText = new JLabel("Rename element");
         JLabel picEditText = new JLabel(editText);
-        picEditText.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        picEditText.setBorder(BorderFactory.createLineBorder(Color.blue));
         tfText = new JTextField();
 
         lblLineWidth = new JLabel("Choose line width");
         JLabel picLineWidth = new JLabel(lineWidthI);
-        picLineWidth.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        picLineWidth.setBorder(BorderFactory.createLineBorder(Color.blue));
         cmbLineWidth = new JComboBox<>();
         cmbLineWidth.setBackground(Color.WHITE);
         cmbLineWidth.addItem(1);
@@ -70,11 +69,12 @@ public class SettingsDialog extends JDialog {
         JButton colourButton = new JButton();
         colourButton.setAction(MainFrame.getInstance().getActionManager().getColourAction());
         colourButton.setBackground(Color.WHITE);
+        colourButton.setPreferredSize(new Dimension(200, 30));
 
         JPanel textPane = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JPanel linePane = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        textPane.setBackground(Color.lightGray);
-        linePane.setBackground(Color.lightGray);
+        textPane.setBackground(Color.white);
+        linePane.setBackground(Color.white);
         textPane.add(picEditText);
         textPane.add(lblText);
         linePane.add(picLineWidth);
@@ -82,14 +82,12 @@ public class SettingsDialog extends JDialog {
 
         btnSave.setPreferredSize(dimension);
         btnCancel.setPreferredSize(dimension);
-        tfText.setPreferredSize(new Dimension(100, 30));
+        tfText.setPreferredSize(new Dimension(100, 35));
 
-        GridLayout gridLayout = new GridLayout(3,3);
+        GridLayout gridLayout = new GridLayout(2,3);
         gridLayout.setHgap(10);
         gridLayout.setVgap(15);
         JPanel settings = new JPanel(gridLayout);
-        settings.add(lblColour);
-        settings.add(colourButton);
         settings.add(textPane);
         settings.add(tfText);
         settings.add(linePane);
@@ -99,8 +97,8 @@ public class SettingsDialog extends JDialog {
         JPanel buttons = new JPanel(new FlowLayout());
         buttons.add(btnSave);
         buttons.add(btnCancel);
-        settings.setBackground(Color.lightGray);
-        buttons.setBackground(Color.lightGray);
+        settings.setBackground(Color.white);
+        buttons.setBackground(Color.white);
 
         selected = MainFrame.getInstance().getCurrProjectView().getCurrMapView().getSelectedElements().isEmpty();
         MainFrame.getInstance().getActionManager().getColourAction().setColor(MainFrame.getInstance().getCurrProjectView().getCurrMapView().getSelectedElements().get(0).getColor());
@@ -171,8 +169,11 @@ public class SettingsDialog extends JDialog {
         btnSave.addMouseListener(saveClick);
         btnCancel.addMouseListener(cancelClick);
 
+        add(colourButton, BorderLayout.NORTH);
         add(settings, BorderLayout.CENTER);
         add(buttons, BorderLayout.SOUTH);
+        getRootPane().setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+
     }
 
     public boolean isSelected() {

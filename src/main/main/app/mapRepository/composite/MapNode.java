@@ -15,6 +15,8 @@ import main.app.messageGenerator.Message;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+@Getter
+@Setter
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
@@ -23,9 +25,6 @@ import java.util.Objects;
         @JsonSubTypes.Type(value = MapNodeComposite.class, name = "MapNodeComposite"),
         @JsonSubTypes.Type(value = Element.class, name = "Element")
 })
-
-@Getter
-@Setter
 public abstract class MapNode implements Publisher {
 
     private String name;

@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class InfoDialog extends JDialog {
 
-    public InfoDialog(JFrame parent, Icon icon){
+    public InfoDialog(JFrame parent){
         super(parent, "About", true);
 
         setLayout(new BorderLayout());
@@ -13,7 +13,7 @@ public class InfoDialog extends JDialog {
         setResizable(false);
         setLocationRelativeTo(parent);
 
-        JLabel about = new JLabel("Desktop application GeRuMap");
+        JLabel about = new JLabel("Desktop application \"GeRuMap\"");
 
         JPanel descriptionPane = new JPanel();
         descriptionPane.setBackground(Color.lightGray);

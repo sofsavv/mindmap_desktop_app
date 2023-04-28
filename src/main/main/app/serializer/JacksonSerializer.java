@@ -31,6 +31,7 @@ public class JacksonSerializer implements Serializer {
     public Project openProject(File file) {
         try{
             FileReader fileReader = new FileReader(file);
+            objectMapper.registerSubtypes(MindMap.class);
             return objectMapper.readValue(fileReader, Project.class);
         }catch (Exception e){
             e.printStackTrace();

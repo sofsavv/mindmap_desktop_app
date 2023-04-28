@@ -28,6 +28,8 @@ public class OpenProjectAction extends MyAbstractAction {
         if(fileChooser.showOpenDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION){
             try{
                 File file = fileChooser.getSelectedFile();
+//                System.out.println(file.exists());
+//                System.out.println("path: "+file.getPath());
                 Project p = ApplicationFramework.getInstance().getSerializer().openProject(file);
                 MainFrame.getInstance().getMapTree().loadProject(p);
                 SwingUtilities.updateComponentTreeUI(MainFrame.getInstance().getProjectExplorer());

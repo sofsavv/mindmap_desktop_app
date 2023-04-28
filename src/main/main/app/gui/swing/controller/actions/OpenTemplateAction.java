@@ -19,7 +19,7 @@ public class OpenTemplateAction extends MyAbstractAction {
         putValue(SMALL_ICON, loadIcon("/images/template.png"));
         putValue(SHORT_DESCRIPTION, "Open template");
     }
-    private final File directory = new File("src/main/resources/templates");
+    private final File directory = new File("src/resources/templates");
 
     @Override
     public void actionPerformed(ActionEvent e) {

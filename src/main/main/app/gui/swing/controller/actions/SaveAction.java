@@ -13,7 +13,7 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 
 public class SaveAction extends MyAbstractAction {
-    private final File directory = new File("src/main/resources/templates");
+    private final File directory = new File("src/resources/templates");
 
     public SaveAction(){
         putValue(NAME, "Save");
@@ -26,11 +26,11 @@ public class SaveAction extends MyAbstractAction {
     public void actionPerformed(ActionEvent e) {
 
         JFileChooser fileChooser = windowsJFileChooser(new JFileChooser());
+        File projectFile;
 
         if(MainFrame.getInstance().getMapTree().getSelectedNode() != null) {
             if (MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode() instanceof Project) {
                 Project project = (Project) MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode();
-                File projectFile = null;
                 if (project.isChanged() && project.getFilePath() != null)
                     project.setFilePath(project.getFilePath());
                 else if (fileChooser.showSaveDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
@@ -42,12 +42,12 @@ public class SaveAction extends MyAbstractAction {
                 ApplicationFramework.getInstance().getMessageGenerator().generate(MyNotification.SAVED);
                 project.setChanged(false);
 
-            } else if (MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode() instanceof MindMap) { //cuvamo templejt
+            } else if (MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode() instanceof MindMap) { // template
 
                 MindMap map = (MindMap) MainFrame.getInstance().getMapTree().getSelectedNode().getMapNode();
                 directory.mkdir();
                 fileChooser.setCurrentDirectory(directory);
-                File mapFile = null;
+                File mapFile;
                 if (map.isChanged() && map.getFilePath() != null)
                     map.setFilePath(map.getFilePath());
                 else if (fileChooser.showSaveDialog(MainFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
