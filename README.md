@@ -10,7 +10,7 @@ Design patterns:
 - State
 - Command
 
-Sequance diagram for drawing a line (link) between 2 concepts:
+Sequence diagram for drawing a line (link) between 2 concepts:
 [sequence_diagram](https://user-images.githubusercontent.com/114228488/235297731-b085a412-b937-4fc4-b69a-28ab27d458bb.jpg)
 
 Implementation diagram:
