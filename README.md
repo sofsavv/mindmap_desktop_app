@@ -1,6 +1,6 @@
 # MindMapDesktopApp
 
-Desktop application - Java Swing, using design patterns 
+Desktop application for creating mind maps - Java Swing, using design patterns 
 
 Design patterns:
 - Singleton
