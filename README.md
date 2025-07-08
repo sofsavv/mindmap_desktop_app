@@ -1,4 +1,4 @@
-# mindmap_desktop_app
+# MindMapDesktopApp
 
 Desktop application - Java Swing, using design patterns 
 
